@@ -134,14 +134,15 @@ function susteen_theme_widgets_init() {
 }
 add_action( 'widgets_init', 'susteen_theme_widgets_init' );
 
-/**
- * Enqueue scripts and styles.
- */
+// カスタムJSファイル読み込み
 function susteen_theme_scripts() {
 	wp_enqueue_style( 'susteen-theme-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'susteen-theme-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'susteen-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array(), _S_VERSION, true );
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -175,4 +176,14 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+
+function enqueue_custom_styles() {    
+    // カスタムCSSファイルを読み込む（テーマフォルダ内にある場合）
+    wp_enqueue_style('main-style', get_template_directory_uri() . '/css/main.css', array(), '1.0', 'all');
+    wp_enqueue_style('swiper', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css', array(), '1.0', 'all');
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
+
+
 

@@ -1,0 +1,14 @@
+@use "sass:math";
+
+@function rem($pixels, $base-font-size: 16px) {
+  @return math.div($pixels, $base-font-size) * 1rem;
+}
+
+@function calculate-line-height($lineHeight) {
+  $baseFontSize: 16px;
+  @return math.div($lineHeight, $baseFontSize);
+}
+
+@function px-to-percent($pixels, $container-width) {
+  @return math.div($pixels, $container-width) * 100%;
+}

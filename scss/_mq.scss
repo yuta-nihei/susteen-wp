@@ -1,0 +1,99 @@
+// 変数
+$small-breakpoint: 430px;
+$desktop-half: 1000px;
+$large-breakpoint: 1200px;
+$tablet: 820px;
+$ipadMini: 768px;
+$iphone-xr: 414px;
+$iphone12: 375px;
+$desktop: 1024px;
+$ipad-rotate-min: 768px; // iPadの横向きの最小幅
+$ipad-rotate-max: 1366px; // iPadの横向きの最大幅
+$ipadmini-rotate-min: 768px; // iPad Miniの横向きの最小幅
+$ipadmini-rotate-max: 1024px; // iPad Miniの横向きの最大幅
+$iphone11-rotate-min: 414px; // iPhone 11の横向きの最小幅
+$iphone11-rotate-max: 896px; // iPhone 11の横向きの最大幅
+$iphone12pro-rotate-min: 428px; // iPhone 12 Proの横向きの最小幅
+$iphone12pro-rotate-max: 844px; // iPhone 12 Proの横向きの最大幅
+
+@mixin media-mobile {
+  @media only screen and (max-width: $small-breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-large {
+  @media only screen and (max-width: $large-breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-tablet {
+  @media only screen and (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin media-ipadmini {
+  @media only screen and (min-width: $ipadMini) and (max-width: $ipadMini) {
+    @content;
+  }
+}
+
+// iPad Miniの横向き
+@mixin media-ipadmini-rotate {
+  @media only screen and (min-width: $ipadmini-rotate-min) and (max-width: $ipadmini-rotate-max) {
+    @content;
+  }
+}
+
+// iPadの横向き
+@mixin media-ipad-rotate {
+  @media only screen and (min-width: $ipad-rotate-min) and (max-width: $ipad-rotate-max) {
+    @content;
+  }
+}
+
+// iPhone 11の横向き
+@mixin media-ip11-rotate {
+  @media only screen and (min-width: $iphone11-rotate-min) and (max-width: $iphone11-rotate-max) {
+    @content;
+  }
+}
+
+// iPhone 12 Proの横向き
+@mixin media-ip12pro-rotate {
+  @media only screen and (min-width: $iphone12pro-rotate-min) and (max-width: $iphone12pro-rotate-max) {
+    @content;
+  }
+}
+
+@mixin media-ipxr {
+  @media only screen and (min-width: $iphone-xr) and (max-width: $iphone-xr) {
+    @content;
+  }
+}
+
+@mixin media-ip12 {
+  @media only screen and (min-width: $iphone12) and (max-width: $iphone12) {
+    @content;
+  }
+}
+
+@mixin media-desktop-half {
+  @media only screen and (min-width: $desktop-half) and (max-width: $desktop-half) {
+    @content;
+  }
+}
+
+@mixin media-desktop-half {
+  @media only screen and (max-width: $desktop-half) {
+    @content;
+  }
+}
+
+@mixin media-desktop {
+  @media screen and (min-width: $desktop) {
+    @content;
+  }
+}

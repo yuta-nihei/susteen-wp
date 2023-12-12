@@ -1,0 +1,27 @@
+// メディアクエリimport
+@import "mq";
+@import "reset";
+@import "functions";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&display=swap");
+
+// font-size: rem(34px, 16px);
+
+// line-heightをXDの値から計算
+// line-height: calculate-line-height(24px);
+
+// calcで%指定
+// calc-percentage($element-width, $container-width);
+
+$container-width: 1605px; // コンテナの幅
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.5;
+  font-size: rem(16px);
+
+  & img {
+    width: 100%;
+    height: auto;
+  }
+}
